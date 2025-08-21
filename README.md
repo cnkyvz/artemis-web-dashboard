@@ -28,14 +28,17 @@ Multi-portal web dashboard system for enterprise field operations management. Fe
 - Streamlined user experience
 - Efficient resource management
 
-## 🌐 Live Demo
+## 🌐 Live Production System
 
-**[View Live Demo](https://simetra.artemisaritim.com)**
+**[Access Production Dashboard](https://simetra.artemisaritim.com)**
 
-Experience the multi-portal web dashboard in action:
-- Main landing page with portal navigation
-- Employee portal interface
-- Company management dashboard
+This is the live production system currently in use:
+- Multi-portal enterprise dashboard
+- Employee field operations interface
+- Company management system
+- Real-time data processing and analytics
+
+*Production system - active business operations*
 
 ## Tech Stack
 
