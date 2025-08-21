@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis Arıtım - Ana Sayfa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 50%, #2980B9 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-circle-1 {
+            position: absolute;
+            top: -30vw;
+            left: -20vw;
+            width: 80vw;
+            height: 80vw;
+            border-radius: 50%;
+            background: rgba(52, 152, 219, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .background-circle-2 {
+            position: absolute;
+            bottom: -30vw;
+            right: -20vw;
+            width: 80vw;
+            height: 80vw;
+            border-radius: 50%;
+            background: rgba(41, 128, 185, 0.2);
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            text-align: center;
+            z-index: 1;
+            max-width: 400px;
+            padding: 20px;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .logo-container {
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            width: 250px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            margin-bottom: 1rem;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+
+        .slogan {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-top: 2rem;
+        }
+
+        .card-title {
+            color: white;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .button-container {
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: slideInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .button-container:nth-child(3) { animation-delay: 0.1s; }
+        .button-container:nth-child(4) { animation-delay: 0.2s; }
+
+        .button-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-container:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .firma-button {
+            background: #3498DB;
+        }
+
+        .calisan-button {
+            background: #2980B9;
+        }
+
+        .button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: none;
+            transition: all 0.3s ease;
+        }
+
+        .button-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .register-container {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .register-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .register-link {
+            color: #3498DB;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .register-link:hover {
+            color: #5DADE2;
+            text-decoration: underline;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                max-width: 350px;
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                width: 200px;
+                height: 60px;
+            }
+            
+            .logo-text {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                max-width: 300px;
+            }
+            
+            .card-title {
+                font-size: 22px;
+            }
+            
+            .button {
+                font-size: 14px;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Background Elements -->
+        <div class="background-circle-1"></div>
+        <div class="background-circle-2"></div>
+        
+        <!-- Loading Overlay -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Logo Container -->
+            <div class="logo-container">
+                <img 
+                    src="./logo-whitee.png" 
+                    alt="Artemis Arıtım Logo"
+                    class="logo"
+                    style="
+                        width: 60%;
+                        max-width: 300px;
+                        height: auto;
+                        object-fit: contain;
+                        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+                        margin-bottom: 1rem;
+                    "
+                />
+            </div>
+
+            <!-- Card -->
+            <div class="card">
+                <h1 class="card-title">Hoş Geldiniz</h1>
+                <p class="card-subtitle">Su Arıtım Sistemleri</p>
+
+                <!-- Buttons -->
+                <div class="button-container firma-button" onclick="navigateToFirma()">
+                    <button class="button">
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        Üye Firma Giriş
+                    </button>
+                </div>
+
+                <div class="button-container calisan-button" onclick="navigateToCalisan()">
+                    <button class="button">
+                        <svg class="button-icon" viewBox="0 0 24 24">
+                            <path d="M14,2V4H10V2H14M20,6H16V4L14,2H10L8,4V6H4C2.89,6 2,6.89 2,8V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V8C22,6.89 21.11,6 20,6Z"/>
+                        </svg>
+                        Artemis Giriş
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            © 2025 Artemis Arıtım. Tüm hakları saklıdır.
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect kontrolü
+        window.addEventListener('load', function() {
+            checkAutoRedirect();
+        });
+
+        async function checkAutoRedirect() {
+            try {
+                // Firma token kontrolü
+                const firmaToken = localStorage.getItem('firmToken');
+                const userData = localStorage.getItem('userData');
+                
+                if (firmaToken && userData) {
+                    console.log('Firma kullanıcısı tespit edildi, yönlendiriliyor...');
+                    showLoading();
+                    setTimeout(() => {
+                        window.location.href = './firma/';
+                    }, 1000);
+                    return;
+                }
+                
+                // Çalışan token kontrolü
+                const employeeToken = localStorage.getItem('employeeToken');
+                const employeeData = localStorage.getItem('employeeData');
+                
+                if (employeeToken && employeeData) {
+                    console.log('Çalışan kullanıcısı tespit edildi, yönlendiriliyor...');
+                    showLoading();
+                    setTimeout(() => {
+                        window.location.href = './calisan/';
+                    }, 1000);
+                    return;
+                }
+                
+                console.log('Yeni kullanıcı - ana sayfada kalıyor');
+            } catch (error) {
+                console.error('Auto-redirect kontrol hatası:', error);
+            }
+        }
+
+        function navigateToFirma() {
+            showLoading();
+            // Kısa animasyon sonrası yönlendir
+            setTimeout(() => {
+                window.location.href = './firma/';
+            }, 500);
+        }
+
+        function navigateToCalisan() {
+            showLoading();
+            // Kısa animasyon sonrası yönlendir
+            setTimeout(() => {
+                window.location.href = './calisan/';
+            }, 500);
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        // Button press animasyonları
+        document.querySelectorAll('.button-container').forEach(container => {
+            container.addEventListener('mousedown', function() {
+                this.style.transform = 'translateY(-2px) scale(0.98)';
+            });
+            
+            container.addEventListener('mouseup', function() {
+                this.style.transform = 'translateY(-2px) scale(1)';
+            });
+            
+            container.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

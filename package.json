@@ -1,0 +1,18 @@
+{
+  "name": "artemis-web-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Enterprise web dashboard for field operations management",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["web", "dashboard", "enterprise", "vite"],
+  "author": "Cenk Yavuz",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
