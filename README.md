@@ -28,6 +28,15 @@ Multi-portal web dashboard system for enterprise field operations management. Fe
 - Streamlined user experience
 - Efficient resource management
 
+## 🌐 Live Demo
+
+**[View Live Demo](https://simetra.artemisaritim.com)**
+
+Experience the multi-portal web dashboard in action:
+- Main landing page with portal navigation
+- Employee portal interface
+- Company management dashboard
+
 ## Tech Stack
 
 - **HTML5** - Modern semantic markup
